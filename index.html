@@ -4,15 +4,106 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Movie APP</title>
+
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="plugin/lightslider.css">
+   <link rel="stylesheet" href="css/style.css">
+
+   <!-- Awesome Font Link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
 <body>
 
-   <div class="search-box">
-      <input type="text" class="searchInput">
-      <button type="button" class="sendBtn">검색</button>
+
+   <div class="wrap">
+      <header>
+         <div class="center headerCenter">
+            <h2>MOVIES</h2>
+            <ul class="nav">
+              <li><a href="./index.html">HOME</a></li>
+              <li><a href="#">LATEST</a></li>
+              <li><a href="#">GENRE</a></li>
+              <li><a href="#">RATTING</a></li>
+            </ul>
+         </div>
+      </header>
+
+      <section class="main">
+         <div class="overlay"></div> 
+         <div class="center">
+            <h2>MOVIES</h2>
+            <p>어떤 영화를 찾고 계신가요?</p>
+            <div class="search-box">
+               <input type="text" placeholder="MOVIE SEARCH" class="searchInput">
+               <button type="button" class="sendBtn">검색</button>
+            </div>
+            <!-- <div class="container clear"></div> -->
+            <!-- end of container -->
+         </div>
+      </section>
+
+
+      <section class="recent-section">
+         <div class="center">
+         <div class="section-title">
+            <h2>Recent Movies</h2>
+         </div>
+         </div>
+      
+         <div class="loading">
+            <img src="./img/loading-bar.gif">
+         </div>
+         <div class="center" id="container">
+      
+         </div>
+         <div class="center">
+            <div class="numContainer">
+               <div class="numBtns">
+                  <button type="button" class="prev arrow">prev</button>
+                  <button type="button" class="pageNum" value="1">1</button>
+                  <button type="button" class="pageNum" value="2">2</button>
+                  <button type="button" class="pageNum" value="3">3</button>
+                  <button type="button" class="pageNum" value="4">4</button>
+                  <button type="button" class="pageNum" value="5">5</button>
+                  <button type="button" class="next arrow">next</button>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end of recent section -->
+
+      <section class="genre-section">
+         <div class="action">
+            <div class="action-contents" id="actionSlide">
+               <!-- <div class="slide-box">
+                  <div>
+                     <img src="img/avengers.jpg" alt="">
+                     <div class="slide-txt">
+                        <h3>Movie Title</h3>
+                        <p class="rating">Rating : 8.0</p>
+                     </div>
+                     <a href="#">Details</a>
+                  </div>
+               </div> -->
+               <!-- end of slide-box -->
+               
+            </div>
+         </div>
+         <div class="romance">
+            <div class="romance-contents" id="romanceSlide"></div>
+         </div>
+         <div class="drama">
+            <div class="drama-contents" id="dramaSlide"></div>
+         </div>
+      </section>
+      
+      
+
    </div>
+  
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="plugin/lightslider.js"></script>
    <script>
       $(function () {
          function searchMovie(){
@@ -40,6 +131,8 @@
 
       });
    </script>
+   <script src="/movie_api/js/recent.js"></script>
+   <script src="/movie_api/js/genre.js"></script>
    
 </body>
 </html>

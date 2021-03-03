@@ -1,0 +1,66 @@
+.wrap{width: 100%; height: 100vh;}
+
+/* header style */
+header{width:100%; height:auto; background:#1d1d1d; top:0; z-index:2; position: fixed;}
+header h2{color:#ff4444;}
+header .headerCenter{display: flex; justify-content: space-between; align-items:center; }
+header .nav{display:flex;} 
+header .nav li a{color:#eee; padding:20px 30px; display:block; transition:all 0.3s; font-weight:600;}
+header .nav li a:hover{color:#ff4444;}
+
+/* main section style */
+.main{width: 100%; height: 100%; background: #222; _background: url(../img/lalaland.jpg) no-repeat center center; background-size: cover; position: relative; display: flex; align-items: center;}
+.main .overlay{width:100%; height:100%; position:absolute; top:0; left:0; background: -webkit-linear-gradient(top, rgba(29,29,29,0.1) 0%,rgba(29,29,29,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, rgba(29,29,29,0.1) 0%,rgba(29,29,29,1) 100%); z-index:1;}
+.main .center h2{color: #ff4444; top: 30%; left: 27%; font-size: 50px; position: absolute; padding: 5px;z-index: 1;}
+.main .center p{color: #fff; z-index: 1; top: 40%; left: 27%; position: absolute; font-size: 16px; padding: 5px;}
+.main .search-box{width:100%; height:auto; display:flex; justify-content: center; position: absolute; z-index: 10; top: 50%; left: 50%; transform: translate(-50%,-50%);}
+.main .search-box input{border:1px solid #fff; background:none; color:#fff; padding:0 10px; margin-left:5px; width:40%; height: 32px;}
+.main .search-box input::placeholder{color:#bbb;}
+.main .search-box .sendBtn{border:1px solid #ff4444; background:#ff4444; color:#ff4444; padding:0 20px; color:#fff; display:flex; align-items: center; margin: 0 5px;}
+.main .search-box .sendBtn:hover{background:transparent;}
+.main .search-box input:hover{ padding: 12px 0; outline: 0; border: 1px solid transparent; border-bottom: 1px solid #fff;}
+
+
+
+/* 
+.container{width: 80%; height: auto; margin: auto;}
+.clear:after{display: block; clear: both; content: '';} 
+.recent-movie-wrap{float: left; width: 20%; padding: 10px;}
+.recent-movie-wrap img{width: 100%;}
+.recent-movie-wrap h3{font-size: 12px;} */
+
+/* Recent Movies Section Style */
+.recent-section{width:100%; height:auto; padding:50px 0;}
+.recent-section .section-title{width:100%; height:auto; margin:15px 0; padding-left:15px; border-left:3px solid #ff4444;}
+.recent-section .section-title h2{ color:#ff4444; }
+.recent-section .recent-movie-wrap{width: 20%; padding: 5px;}
+.recent-section .recent-movies{width:100%; height: 100%; padding: 5px; box-shadow: 0 0 3px #aaa; position: relative;}
+.recent-section .loading{width:100%; height:500px; top:0; left:0; padding:100px 0; display:flex; align-items: center; justify-content: center;}
+.recent-section .loading img{width: 100%; height: 100%; z-index: 1;}
+/* .recent-section .recent-movies .loading img{width:50%; height:50%; z-index:1;} */
+.recent-section .recent-movies img{width:100%; z-index:10;}
+.recent-section .recent-movies .movie-title{color:#222; font-weight:600; padding:10px 0; font-size:16px; width:100%; text-align:center;}
+
+.numContainer{width: 100%; height: auto; margin: 20px auto 50px;}
+.numBtns{width:100%; height:auto; display:flex; justify-content: center; padding:15px 0;}
+.numBtns button{width:30px; height:30px; border:1px solid #ff4444; background:#fff; font-size:12px; outline:0; display:flex; justify-content: center; align-items: center; color:#ff4444; margin:0 3px;}
+.numBtns button.active{background:#ff4444; color:#fff;}
+
+
+/* detailMain page style */
+.detailMain{width: 100%; height: auto; }
+.detailMain .search-box{width: 100%; height: auto; text-align: center; margin: 30px 0; position:relative;}
+.detailMain .search-box h2{font-weight: 600; padding:10px 0;}
+.detailMain .search-box input{width: 35%; height: 30px; border: 0; border-bottom: 1px solid #222; text-align: center;}
+.detailMain .search-box input:hover{border: 1px solid #222;}
+.detailMain .search-box .sendBtn{border: 0; width: 30px; height: 30px; background: transparent;}
+.detailMain .search-box .sendBtn i.fa{color: #222; font-size: 20px; align-items: center;}
+
+.items{display: grid; grid-template-columns: repeat(3, 1fr); background: #ddd;}
+
+/* genre section style */
+.genre-section{width: 100%; max-width: 980px; height: auto; margin: auto; padding: 50px 0;}
+.genre-section>div{margin: 30px 0;}
+.slide-box{padding: 5px;}
+.slide-box img{width: 100%;}
