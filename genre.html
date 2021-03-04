@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Movie APP</title>
+
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/style.css">
+
+   <!-- Awesome Font Link -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
+
+   <div class="wrap">
+      <header>
+         <div class="center headerCenter">
+            <h2>MOVIES</h2>
+            <ul class="nav">
+              <li><a href="./index.html">HOME</a></li>
+              <li><a href="#">LATEST</a></li>
+              <li><a href="./genre.html" class="active">GENRE</a></li>
+              <li><a href="#">RATTING</a></li>
+            </ul>
+         </div>
+      </header>
+
+      
+   </div>
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>
+      $(function () {
+         function searchMovie(){
+            let searchResult = $(".searchInput").val();
+            if(!searchResult){
+               alert('검색어를 입력해 주세요.');
+               return false;
+            }
+
+            location.href="/movie_api/search.html?key=" + searchResult;
+         }
+
+
+         $(".sendBtn").click(function (){
+            searchMovie();
+         });
+
+         //press enter
+         document.addEventListener('keydown', function(e){
+            const keyCode = e.keyCode;
+            if(keyCode ==13){
+               searchMovie();
+            }
+         });
+
+      });
+   </script>
+   <script src="js/search.js"></script>
+   
+</body>
+</html>

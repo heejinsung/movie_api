@@ -6,24 +6,33 @@ $(function (){
    function getData(page){
       let getDatas = [];
       $.ajax({
-         url:'https://yts.mx/api/v2/list_movies.json?sort_by=year&order_by=desc&limit=10&page=' + page,
+         url:'https://yts.mx/api/v2/list_movies.json?sort_by=download_count&order_by=desc&limit=10&page=' + page,
          success:function(data){
-            //console.log(data.data.movies[0].title);
+            // console.log(data.data.movies[0].title);
             for(let i = 0; i < data.data.movies.length; i++){
                if(data.data.movies[i].title == ''){
                   data.data.movies[i].title = 'No Title';
                }
-               let recentHTML = `<div class="recent-movie-wrap">
-                                    <div class="recent-movies">
-                                       <div class="movie-img">
-                                          <img src="${data.data.movies[i].medium_cover_image}" alt="">
-                                       </div>
-                                       <h3 class="movie-title">${data.data.movies[i].title}</h3>
-                                    </div>
+               let popularHTML = `<div class="Download-movies">
+                                    <a href="${data.data.movies[i].url} " class="movie-link-D">
+                                       <figure>
+                                          <img src="${data.data.movies[i].medium_cover_image}" alt="" width="210" height="300">
+                                          <figcaption class="hidden">
+                                             <span class="rating">
+                                             <i class="fa fa-star"></i>
+                                             ${data.data.movies[i].rating} / 10
+                                             </span>
+                                             <h4>${data.data.movies[i].genres[1]}</h4>
+                                             <h4>${data.data.movies[i].genres[2]}</h4>
+                                             <span class="detailBtn">View Detail</span>
+                                          </figcaption>
+                                       </figure>
+                                       <h3>${data.data.movies[i].title}</h3>
+                                    </a>
                                  </div>`;
-                                 getDatas += recentHTML;
+                                 getDatas += popularHTML;
             }
-            $("#container").append(getDatas);
+            $(".Download-movie-wrap").append(getDatas);
          }
       });
      currentPage = page;
@@ -32,7 +41,7 @@ $(function (){
    $(".numBtns button.pageNum").click(function(){
       let btnValue = Number($(this).attr('value'));
       //console.log(btnValue);
-      $(".recent-movie-wrap").remove();
+      $(".Download-movies").remove();
       $(".loading").show();
       getData(btnValue);
 
@@ -46,7 +55,7 @@ $(function (){
       if(currentPage == a){
          return false;
       } else {
-         $(".recent-movie-wrap").remove();
+         $(".Download-movies").remove();
          getData(b);
          $(".loading").show();
          $(".numBtns button").removeClass("active");

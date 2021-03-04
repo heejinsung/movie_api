@@ -20,9 +20,9 @@
          <div class="center headerCenter">
             <h2>MOVIES</h2>
             <ul class="nav">
-              <li><a href="./index.html">HOME</a></li>
+              <li ><a href="./index.html" class="active">HOME</a></li>
               <li><a href="#">LATEST</a></li>
-              <li><a href="#">GENRE</a></li>
+              <li><a href="./genre.html">GENRE</a></li>
               <li><a href="#">RATTING</a></li>
             </ul>
          </div>
@@ -43,18 +43,39 @@
       </section>
 
 
-      <section class="recent-section">
+      <section class="popular-section">
          <div class="center">
-         <div class="section-title">
-            <h2>Recent Movies</h2>
-         </div>
+            <div class="section-title">
+               <h2>Popular Movies</h2>
+            </div>
          </div>
       
          <div class="loading">
             <img src="./img/loading-bar.gif">
          </div>
-         <div class="center" id="container">
-      
+
+         <div class="DownloadCon center">
+            <div class="Download-movie-wrap">
+               <!-- <div class="Download-movies">
+                  <a href="#" class="movie-link-D">
+                     <figure>
+                        <img src="./img/avengers.jpg" alt="" width="210" height="300">
+                        <figcaption class="hidden">
+                           <span class="rating">
+                           <i class="fa fa-star"></i>
+                           7.5 / 10
+                           </span>
+                           <h4>Genres</h4>
+                           <span class="detailBtn">View Detail</span>
+                        </figcaption>
+                     </figure>
+                     <h3>Title</h3>
+
+                  </a>
+               </div> -->
+               <!-- end of Download-movies -->
+               
+            </div>
          </div>
          <div class="center">
             <div class="numContainer">
@@ -130,7 +151,16 @@
          });
 
       });
+      
+      $(document).ready(function(){
+         $('.nav li').click(function(){
+            $('.nav li a').removeClass("active");
+            $(this).addClass("active");
+         });
+      });
+
    </script>
+   
    <script src="/movie_api/js/recent.js"></script>
    <script src="/movie_api/js/genre.js"></script>
    

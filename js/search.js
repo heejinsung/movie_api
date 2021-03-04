@@ -22,17 +22,30 @@ $(function () {
 
          let itemContents = [];
          $.each(obj.items, function(i, item){
-            //console.log(item.title);
-            let itemHTML = `<div class="movie_box">
-                              <img src="${item.image}" alt="">
-                              <h2>제목 :${item.title}</h2>
-                              <p>감독 :${item.director}</p>
-                              <p>개봉 :${item.pubDate}</p>
-                              <p>평점 :${item.userRating}</p>
+            console.log(item);
+            let itemHTML = `<div class="item">
+                              <a href="${item.link}" class="movie-link">
+                                 <figure>
+                                    <img src="${item.image}" alt="" width="190" height="250">
+                                    <figcaption class="hidden">
+                                       <span class="rating">
+                                          <i class="fa fa-star"></i>
+                                          ${item.userRating} / 10
+                                       </span>
+                                       <h4>${item.pubDate}</h4>
+                                       <span class="detailBtn">View Detail</span>
+                                    </figcaption>
+                                 </figure>
+                              </a>
+                              <div class="movie-bottom">
+                                 <a href="#">
+                                 ${item.title}
+                                 </a>
+                              </div>
                            </div>`;
             itemContents.push($(itemHTML).get(0));
          });
-         $(".item").append(itemContents);
+         $(".item-sizer").append(itemContents);
       },
    });
 });
