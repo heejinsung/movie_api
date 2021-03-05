@@ -16,7 +16,9 @@
    <div class="wrap">
       <header>
          <div class="center headerCenter">
-            <h2>MOVIES</h2>
+            <a href="./index.html">
+               <h2>MOVIES</h2>
+            </a>
             <ul class="nav">
               <li><a href="./index.html">HOME</a></li>
               <li><a href="#">LATEST</a></li>
@@ -26,38 +28,76 @@
          </div>
       </header>
 
+      <section class="AllGenres">
+         <div class="center">
+            <div class="section-title">
+               <!-- <h2>Genres</h2> -->
+            </div>
+
+            <div class="tab_container">
+               <ul class="tabs">
+                  <li>Action</li>
+                  <li>Animation</li>
+                  <li>Comedy</li>
+                  <li>Romance</li>
+                  <li>Fantasy/SF</li>
+               </ul>
+            </div>
+            <div class="loading">
+               <img src="./img/loading-1.gif">
+            </div>
+
+            <div class="tabCon center">
+               <div class="tabContents action">
+                  <div class="tabConbox  action-contents" >
+                     <!-- <div class="moviebox">
+                        <a href="#" class="movie-link-T">
+                           <figure>
+                              <img src="./img/avengers.jpg" alt="" width="210" height="300">
+                              <figcaption class="hidden">
+                                 <span class="rating">
+                                 <i class="fa fa-star"></i>
+                                 7.5 / 10
+                                 </span>
+                                 <h4>Genres</h4>
+                                 <span class="detailBtn">View Detail</span>
+                                 </figcaption>
+                           </figure>
+                           <h3>Title</h3>
+                        </a>
+                     </div> -->
+                     <!-- end of moviebox -->
+                     
+                  </div>
+                  
+               </div>
+               
+               <div class="tabContents animation">
+                  <div class="tabConbox animation-contents" ></div>
+               </div>
+               <div class="tabContents comedy">
+                  <div class="tabConbox comedy-contents" ></div>
+               </div>
+               <div class="tabContents romance">
+                  <div class="tabConbox romance-contents"></div>
+               </div>
+               <div class="tabContents fantasy">
+                  <div class="tabConbox fantasy-contents"></div>
+               </div>
+               
+            </div>
+            
+                  
+         </div>
+         
+      </section>
       
    </div>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script>
-      $(function () {
-         function searchMovie(){
-            let searchResult = $(".searchInput").val();
-            if(!searchResult){
-               alert('검색어를 입력해 주세요.');
-               return false;
-            }
-
-            location.href="/movie_api/search.html?key=" + searchResult;
-         }
-
-
-         $(".sendBtn").click(function (){
-            searchMovie();
-         });
-
-         //press enter
-         document.addEventListener('keydown', function(e){
-            const keyCode = e.keyCode;
-            if(keyCode ==13){
-               searchMovie();
-            }
-         });
-
-      });
-   </script>
-   <script src="js/search.js"></script>
+   
+   <!-- <script src="js/search.js"></script> -->
+   <script src="js/genre_tab.js"></script>
    
 </body>
 </html>

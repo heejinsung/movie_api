@@ -26,7 +26,7 @@ $(function () {
             let itemHTML = `<div class="item">
                               <a href="${item.link}" class="movie-link">
                                  <figure>
-                                    <img src="${item.image}" alt="" width="190" height="250">
+                                    <img src="${item.image}" alt="" width="190" height="250" onError="this.src='./img/no-image.png';">
                                     <figcaption class="hidden">
                                        <span class="rating">
                                           <i class="fa fa-star"></i>

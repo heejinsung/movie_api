@@ -39,8 +39,6 @@ header .nav li a.active{color:#ff4444;}
 .popular-section .loading img{width: 100%; height: 100%; z-index: 1;}
 /* .popular-section .recent-movies .loading img{width:50%; height:50%; z-index:1;} */
 
-
-
 .DownloadCon{width: 100%; height: auto; padding: 50px 0; _background: #ddd; position: relative; }
 .DownloadCon .Download-movie-wrap{display: flex; flex-wrap: wrap;  }
 .Download-movie-wrap .Download-movies{margin-left: 10px; margin-right: 10px; padding-bottom: 30px;}
@@ -95,13 +93,57 @@ header .nav li a.active{color:#ff4444;}
 .items .item .movie-link:hover img{filter: brightness(40%);}
 
 .item .movie-bottom{max-width:210px; margin: 0 auto; padding: 0 5px;}
-.item .movie-bottom a{font-size: 15px; font-weight: bold; color: #fff; white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
-
-
+.item .movie-bottom a{font-size: 15px; font-weight: bold; color: #fff; _white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
 
 
 /* genre section style */
-.genre-section{width: 100%; max-width: 980px; height: auto; margin: auto; padding: 50px 0;}
-.genre-section>div{margin: 30px 0;}
+.genre-section{width: 100%; _max-width: 980px; height: auto; margin: auto; padding: 50px 0; background-color: #1d1d1d; }
+.genre-section .genCon{width: 100%; height: auto; _display: flex;}
+.genre-section .section-title{width:100%; height:auto; margin:15px 0; padding-left:15px; border-left:3px solid #ff4444;}
+.genre-section .section-title h2{ color:#ff4444; }
+
+.genCon .slide-wrap{width: 100%; height: auto; position: relative;  padding: 50px 0; }
+.genCon .slide-contents{display: flex; flex-wrap: wrap;}
+.slide-contents .slide-box{margin: 0 15px 0 15px; max-width: 200px; position: relative;}
+.slide-contents .slide-box img{width: 100%;}
+.slide-contents .slide-box .slide-txt{color: #fff; text-align: center;}
+.slide-contents .slide-box .slide-txt h3{white-space: nowrap; overflow: hidden;text-overflow: ellipsis;}
+.slide-contents .slide-box a{display: flex; align-items: center; justify-content: center; color: #fff; border: 1px solid #fff; font-size: 12px; width: 60%; margin: 10px auto;}
+
+
+
+/* .genCon>div{margin: 30px 0;}
 .slide-box{padding: 5px;}
-.slide-box img{width: 100%;}
+.slide-box img{width: 100%;} */
+
+/* Genres Page style */
+.AllGenres{width:100%; height:auto; padding:30px 0; background-color: #222; }
+.AllGenres .section-title{width:100%; height:auto; margin:15px 0; padding-left:15px; border-left:3px solid #ff4444;}
+.AllGenres .section-title h2{ color:#ff4444; }
+.AllGenres .center .loading{width: 100%; height: auto; display: flex; justify-content: center; align-items: center; margin-top: 20px;}
+.AllGenres .center .loading img{width: 40%; height: 100%; z-index: 1;}
+
+.tab_container{width: 80%; height: auto; margin: auto;}
+.tab_container .tabs{display: flex; justify-content: space-between; align-items: center; margin: 10px 0; cursor: pointer;}
+.tab_container .tabs li{color: #fff; font-size: 16px; font-weight: 600; text-align: center; height: 30px;}
+.tab_container .tabs li:hover,
+.tab_container .tabs li.active{color: #ff4444; border-bottom: 2px solid #ff4444;}
+
+.tabCon{width: 100%; height: auto; padding: 100px 0;}
+.tabContents{width: 100%; height: auto;}
+.tabContents .tabConbox{display: flex; flex-wrap: wrap;}
+.tabContents .tabConbox .moviebox{margin-left: 10px; margin-right: 10px; padding-bottom: 30px;}
+.tabContents .tabConbox .movie-link-T{display: inline-block; border: 5px solid #fff; max-width: 220px; position: relative; transition: all 0.4s;}
+
+.movie-link-T .figure{position: relative; margin: 0; overflow: hidden;}
+.movie-link-T .figure img{width: 100%; display: block; max-width: 100%; height: auto;}
+.movie-link-T .hidden{color: #fff; width: 100%; height: 100%; position: absolute; top:0; text-align: center; opacity: 0; transition: all 0.3s;}
+.movie-link-T .hidden .rating{width: 100%; color: #fff; font-size: 28px; font-weight: 600; position: relative; top: 13%; }
+.movie-link-T .hidden .rating i.fa{font-size: 32px; color: #ff4444; padding-right: 10px; }
+.movie-link-T .hidden h4{font-size: 28px; position: relative; top: 30%;} 
+.movie-link-T .hidden .detailBtn{display: block; position: relative; background: #ff4444; color: #fff; width: 80%; font-size: 18px;padding: 7px 0; margin: 0 auto; border-radius: 4px; top: 40%;}
+.movie-link-T h3{text-align: center; font-size: 15px; margin: 10px 5px; white-space: nowrap; overflow: hidden;text-overflow: ellipsis; color: #fff;}
+
+.tabContents .moviebox .movie-link-T:hover{border: 5px solid #ff4444;}
+.movie-link-T:hover .hidden{opacity: 1;}
+.movie-link-T:hover img{filter: brightness(40%);}

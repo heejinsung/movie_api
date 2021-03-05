@@ -9,7 +9,7 @@ $(function(){
             for(let i = 0; i < data.data.movies.length; i++){
                let genreHTML = `<div class="slide-box">
                                     <div>
-                                       <img src="${data.data.movies[i].medium_cover_image}" alt="">
+                                       <img src="${data.data.movies[i].medium_cover_image}" alt="" onError="this.src='./img/no-image.png';" width="210" height="300">
                                        <div class="slide-txt">
                                           <h3>${data.data.movies[i].title}</h3>
                                           <p class="rating">Rating : ${data.data.movies[i].rating}</p>
